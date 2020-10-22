@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportAsistenciaMaestro" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3bebe8d0-976a-45ac-8dfe-20409bcc0580">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT id_maestro, fecha, hora_entrada, hora_salida, hora_permanencia FROM asistencia_maestro ]]>
+	</queryString>
+	<field name="id_maestro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora_entrada" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora_salida" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora_permanencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="385" y="5" width="183" height="20" uuid="7d381e5e-705d-425b-b125-2e0af372eeac"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="187" y="53" width="350" height="27" uuid="e83757bc-f0cd-43bf-9073-27e2d9808bf1"/>
+				<textElement textAlignment="Justified">
+					<font size="16" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[HISTORIAL DE ASISTENCIA MAESTROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="25" width="350" height="27" uuid="902bd422-6316-429d-9bbd-b3f138825e7e"/>
+				<textElement textAlignment="Justified">
+					<font size="16" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDAD POLITÉCNICA DE VICTORIA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="2" y="3" width="169" height="79" uuid="dc2a1339-7244-403d-a799-3f03067b0323"/>
+				<imageExpression><![CDATA["C:\\Users\\52834\\Documents\\logoUPVV.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="0" width="47" height="20" uuid="7766f17c-764d-4f8f-a1e5-6c1b07ddbf17"/>
+				<text><![CDATA[Maestro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="126" y="1" width="43" height="20" uuid="b208af0a-11d7-4098-a67b-a313d859b46b"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="196" y="2" width="100" height="20" uuid="90098271-2f89-4fbc-ad20-b31eb590d696"/>
+				<text><![CDATA[Hora de entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="2" width="100" height="20" uuid="9ceb08d4-a3cc-4242-9277-61ffd71ee81e"/>
+				<text><![CDATA[Hora de salida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="2" width="129" height="20" uuid="ea67aae7-5ae5-46a5-93b9-4a078effa8d1"/>
+				<text><![CDATA[Horas de permanencia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="44" y="0" width="82" height="20" uuid="f5bb62bc-b29e-4dba-8d03-557e9141f133"/>
+				<textFieldExpression><![CDATA[$F{id_maestro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="2" width="71" height="20" uuid="0190887b-a7b8-4cc9-8e10-cb5b14e51b59"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="209" y="2" width="93" height="20" uuid="ceaa5792-91a7-4620-83c7-47609da05910"/>
+				<textFieldExpression><![CDATA[$F{hora_entrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="2" width="100" height="20" uuid="804c250f-7c9f-485a-a13d-1ef87214dfe6"/>
+				<textFieldExpression><![CDATA[$F{hora_salida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="453" y="2" width="100" height="20" uuid="7a827dcc-8338-4482-8cc3-134df3e8f6ea"/>
+				<textFieldExpression><![CDATA[$F{hora_permanencia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="222" y="9" width="80" height="20" uuid="865881f0-14ae-4ae6-bcda-145e663dfbfb"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="302" y="9" width="40" height="20" uuid="623feee8-c5aa-4423-8673-b828bcaa3431"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

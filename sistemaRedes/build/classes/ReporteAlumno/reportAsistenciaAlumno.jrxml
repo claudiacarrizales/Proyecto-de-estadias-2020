@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportAsistenciaAlumno" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="17fb5773-6583-4138-aef8-922e96202022">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT id_alumno, fecha, hora_entrada, hora_salida, horas_permanencia FROM asistencia ]]>
+	</queryString>
+	<field name="id_alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora_entrada" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora_salida" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horas_permanencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="id_alumno_1" class="java.lang.Integer" resetType="Page" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{id_alumno}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="6" width="169" height="79" uuid="afc5ce3e-544d-47f6-a8f7-ef8c3f13f52c"/>
+				<imageExpression><![CDATA["C:\\Users\\52834\\Documents\\logoUPVV.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="169" y="20" width="350" height="27" uuid="64b865de-9d93-4586-a1b1-f9a5965a19fd"/>
+				<textElement textAlignment="Justified">
+					<font size="16" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDAD POLITÉCNICA DE VICTORIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="52" width="350" height="27" uuid="60d3e307-4732-46ff-934b-9ab11388de7d"/>
+				<textElement textAlignment="Justified">
+					<font size="16" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[HISTORIAL DE ASISTENCIA ALUMNOS]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="389" y="0" width="183" height="20" uuid="36594c7f-3c41-48b4-9478-99b0723bd7b6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="62" y="2" width="44" height="20" uuid="46d81248-392d-40d6-96fb-f738c3da4062"/>
+				<text><![CDATA[Alumno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="2" width="41" height="20" uuid="5123aba5-77fa-40b8-bfc4-1f90cd0d6db7"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="2" width="82" height="20" uuid="4552805e-b879-4616-a5f4-1385db86d199"/>
+				<text><![CDATA[Hora de entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="2" width="73" height="20" uuid="6f3acb8e-c11d-4098-bf24-85443e33423b"/>
+				<text><![CDATA[Hora de salida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="2" width="122" height="20" uuid="bb395a57-c353-4480-b597-9a876a3f2cb7"/>
+				<text><![CDATA[Horas  de permanencia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="57" y="4" width="79" height="20" uuid="1565385a-da05-468c-93bc-d98bbe20a040"/>
+				<textFieldExpression><![CDATA[$F{id_alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="5" width="62" height="20" uuid="da77265d-ed24-451a-a6cf-29b11bc38a2a"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="4" width="100" height="20" uuid="40ed4ff4-7cb5-49b8-aeb3-01ec86c40463"/>
+				<textFieldExpression><![CDATA[$F{hora_entrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="4" width="100" height="20" uuid="f07132f8-ca39-449f-9861-a02c36c3b53d"/>
+				<textFieldExpression><![CDATA[$F{hora_salida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="4" width="122" height="20" uuid="49ec74d7-2094-443b-8f7f-8ab93ed4a58c"/>
+				<textFieldExpression><![CDATA[$F{horas_permanencia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="221" y="8" width="80" height="20" uuid="3adc3d50-6db7-43ee-8290-b7e05c961602"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="301" y="8" width="40" height="20" uuid="faf897d4-40b5-42a5-9788-2b64fc754d73"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
