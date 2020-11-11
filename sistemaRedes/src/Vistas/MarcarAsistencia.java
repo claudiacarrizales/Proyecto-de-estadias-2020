@@ -106,14 +106,13 @@ public class MarcarAsistencia extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(lbl_regresarAsistencia)
+                .addGap(165, 165, 165)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jLabel13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
+                        .addGap(42, 42, 42)
                         .addComponent(jLabel4)))
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,10 +185,8 @@ public class MarcarAsistencia extends javax.swing.JFrame implements Runnable {
         jLabel3.setText("Hora: ");
 
         lbl_fechaAlumno.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        lbl_fechaAlumno.setText("jLabel5");
 
         lbl_horaAlumno.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        lbl_horaAlumno.setText("jLabel5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -205,7 +202,7 @@ public class MarcarAsistencia extends javax.swing.JFrame implements Runnable {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_fechaAlumno)
                     .addComponent(lbl_horaAlumno))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel1)

@@ -102,7 +102,7 @@ public class MarcarSalidaMaestros extends javax.swing.JFrame implements Runnable
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("MARCADOR DE ASISTENCIA MAESTROS");
+        jLabel5.setText("MARCADOR DE SALIDA MAESTROS");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -137,7 +137,6 @@ public class MarcarSalidaMaestros extends javax.swing.JFrame implements Runnable
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lector-de-huellas-digitales.png"))); // NOI18N
 
         lbl_horaSalidaMaestro.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        lbl_horaSalidaMaestro.setText("jLabel5");
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Huella Digital", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
@@ -212,7 +211,7 @@ public class MarcarSalidaMaestros extends javax.swing.JFrame implements Runnable
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 21, Short.MAX_VALUE)
+                        .addGap(0, 22, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

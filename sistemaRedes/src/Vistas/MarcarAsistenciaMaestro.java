@@ -175,10 +175,8 @@ public class MarcarAsistenciaMaestro extends javax.swing.JFrame implements Runna
         jLabel3.setText("Hora: ");
 
         lbl_fechaMaestro.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        lbl_fechaMaestro.setText("jLabel5");
 
         lbl_horaMaestro.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        lbl_horaMaestro.setText("jLabel5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

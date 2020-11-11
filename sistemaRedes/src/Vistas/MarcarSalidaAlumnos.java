@@ -121,14 +121,13 @@ public class MarcarSalidaAlumnos extends javax.swing.JFrame implements Runnable 
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(lbl_regresarAsistencia)
+                .addGap(135, 135, 135)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jLabel13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
+                        .addGap(42, 42, 42)
                         .addComponent(jLabel4)))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +145,6 @@ public class MarcarSalidaAlumnos extends javax.swing.JFrame implements Runnable 
         );
 
         lbl_horaSalidaAlumno.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        lbl_horaSalidaAlumno.setText("jLabel5");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LECTOR CÓDIGO DE BARRAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
@@ -207,7 +205,7 @@ public class MarcarSalidaAlumnos extends javax.swing.JFrame implements Runnable 
                 .addComponent(jLabel3)
                 .addGap(16, 16, 16)
                 .addComponent(lbl_horaSalidaAlumno)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)

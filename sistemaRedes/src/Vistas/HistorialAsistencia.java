@@ -44,7 +44,8 @@ public class HistorialAsistencia extends javax.swing.JFrame {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            String sql = "SELECT id_alumno, fecha, hora_entrada, hora_salida, horas_permanencia FROM asistencia";
+            //String sql = "SELECT id_alumno, fecha, hora_entrada, hora_salida, horas_permanencia FROM asistencia";
+            String sql = "Select correo, fecha, hora_entrada, hora_salida, horas_permanencia from asistencia inner join alumno on asistencia.id_alumno = alumno.codigo";
             ps = con.prepareStatement(sql);
 
             rs = ps.executeQuery();
@@ -52,7 +53,7 @@ public class HistorialAsistencia extends javax.swing.JFrame {
             ResultSetMetaData rsmd = rs.getMetaData();
             int cantidadColumnas = rsmd.getColumnCount();
 
-            modelo.addColumn("Alumno");
+            modelo.addColumn("Matricula");
             modelo.addColumn("Fecha");
             modelo.addColumn("Hora entrada");
             modelo.addColumn("Hora salida");
@@ -199,9 +200,9 @@ public class HistorialAsistencia extends javax.swing.JFrame {
                 .addComponent(txt_buscarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_buscarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pdfAlumno)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(76, 76, 76))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -248,7 +249,7 @@ public class HistorialAsistencia extends javax.swing.JFrame {
 
         //validar que el buscar no este vacio
         if (!"".equals(campo)) {
-            where = "WHERE id_alumno = '" + campo + "'";
+            where = "WHERE alumno.correo = '" + campo + "'";
 
             try {
                 DefaultTableModel modelo = new DefaultTableModel();
@@ -259,8 +260,9 @@ public class HistorialAsistencia extends javax.swing.JFrame {
                 Conectar conexion = new Conectar();
                 Connection con = conexion.conectar();
 
-                String sql = "SELECT id_alumno, fecha, hora_entrada, hora_salida, horas_permanencia FROM asistencia " + where;
-
+                //String sql = "SELECT id_alumno, fecha, hora_entrada, hora_salida, horas_permanencia FROM asistencia " + where;
+                String sql = "Select correo, fecha, hora_entrada, hora_salida, horas_permanencia from asistencia inner join alumno on asistencia.id_alumno = alumno.codigo " + where;
+                
                 System.out.println(sql);
                 ps = con.prepareStatement(sql);
 
@@ -269,7 +271,7 @@ public class HistorialAsistencia extends javax.swing.JFrame {
                 ResultSetMetaData rsmd = rs.getMetaData();
                 int cantidadColumnas = rsmd.getColumnCount();
 
-                modelo.addColumn("Alumno");
+                modelo.addColumn("Matricula");
                 modelo.addColumn("Fecha");
                 modelo.addColumn("Hora entrada");
                 modelo.addColumn("Hora salida");
@@ -298,7 +300,8 @@ public class HistorialAsistencia extends javax.swing.JFrame {
                 //Conectar conexion = new Conectar();
                 //Connection con = conexion.conectar();
 
-                String sql = "SELECT id_alumno, fecha, hora_entrada, hora_salida, horas_permanencia FROM asistencia";
+                //String sql = "SELECT id_alumno, fecha, hora_entrada, hora_salida, horas_permanencia FROM asistencia";
+                String sql = "Select correo, fecha, hora_entrada, hora_salida, horas_permanencia from asistencia inner join alumno on asistencia.id_alumno = alumno.codigo";
                 ps = con.prepareStatement(sql);
 
                 rs = ps.executeQuery();
@@ -306,7 +309,7 @@ public class HistorialAsistencia extends javax.swing.JFrame {
                 ResultSetMetaData rsmd = rs.getMetaData();
                 int cantidadColumnas = rsmd.getColumnCount();
 
-                modelo.addColumn("Alumno");
+                modelo.addColumn("Matricula");
                 modelo.addColumn("Fecha");
                 modelo.addColumn("Hora entrada");
                 modelo.addColumn("Hora salida");

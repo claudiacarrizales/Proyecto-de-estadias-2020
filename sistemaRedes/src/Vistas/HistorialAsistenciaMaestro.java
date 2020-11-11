@@ -55,7 +55,8 @@ public class HistorialAsistenciaMaestro extends javax.swing.JFrame {
             //Conectar conexion = new Conectar();
             //Connection con = conexion.conectar();
 
-            String sql = "SELECT id_maestro, fecha, hora_entrada, hora_salida, hora_permanencia FROM asistencia_maestro";
+            //String sql = "SELECT id_maestro, fecha, hora_entrada, hora_salida, hora_permanencia FROM asistencia_maestro";
+            String sql = "Select correo, fecha, hora_entrada, hora_salida, hora_permanencia from asistencia_maestro inner join maestro on asistencia_maestro.id_maestro = maestro.huella";
             ps = con.prepareStatement(sql);
 
             rs = ps.executeQuery();
@@ -266,7 +267,7 @@ public class HistorialAsistenciaMaestro extends javax.swing.JFrame {
 
         //validar que el buscar no este vacio
         if (!"".equals(campo)) {
-            where = "WHERE id_maestro = '" + campo + "'";
+            where = "WHERE maestro.correo = '" + campo + "'";
 
             try {
                 DefaultTableModel modelo = new DefaultTableModel();
@@ -277,7 +278,8 @@ public class HistorialAsistenciaMaestro extends javax.swing.JFrame {
                 Conectar conexion = new Conectar();
                 Connection con = conexion.conectar();
 
-                String sql = "SELECT id_maestro, fecha, hora_entrada, hora_salida, hora_permanencia FROM asistencia_maestro " + where;
+                //String sql = "SELECT id_maestro, fecha, hora_entrada, hora_salida, hora_permanencia FROM asistencia_maestro " + where;
+                String sql = "Select correo, fecha, hora_entrada, hora_salida, hora_permanencia from asistencia_maestro inner join maestro on asistencia_maestro.id_maestro = maestro.huella " + where;
 
                 System.out.println(sql);
                 ps = con.prepareStatement(sql);
@@ -316,7 +318,8 @@ public class HistorialAsistenciaMaestro extends javax.swing.JFrame {
                 //Conectar conexion = new Conectar();
                 //Connection con = conexion.conectar();
 
-                String sql = "SELECT id_maestro, fecha, hora_entrada, hora_salida, hora_permanencia FROM asistencia_maestro";
+                //String sql = "SELECT id_maestro, fecha, hora_entrada, hora_salida, hora_permanencia FROM asistencia_maestro";
+                String sql = "Select correo, fecha, hora_entrada, hora_salida, hora_permanencia from asistencia_maestro inner join maestro on asistencia_maestro.id_maestro = maestro.huella";
                 ps = con.prepareStatement(sql);
 
                 rs = ps.executeQuery();
