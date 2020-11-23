@@ -162,7 +162,7 @@ public class HistorialAsistencia extends javax.swing.JFrame {
         jScrollPane1.setViewportView(table_historial);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel1.setText("Alumno:");
+        jLabel1.setText("Matricula:");
 
         pdfAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pdf.png"))); // NOI18N
         pdfAlumno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -194,9 +194,9 @@ public class HistorialAsistencia extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(84, 84, 84)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt_buscarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_buscarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -335,7 +335,8 @@ public class HistorialAsistencia extends javax.swing.JFrame {
             JasperReport reporte = null;
             //cariable donde se encuentra el archivo de reporte
             String path = "ReporteAlumno\\reportAsistenciaAlumno.jasper";
-
+            //String path = "src\\ReporteAlumno\\reportAsistenciaAlumno.jasper";
+            
             //iguala la variable reporte y enciamos el path para que cargue el reporte
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
             //hacer el llenado del reporte y se encia la ruta del reporte

@@ -53,6 +53,7 @@ public class Alumnos extends javax.swing.JFrame {
             ResultSetMetaData rsmd = rs.getMetaData();
             int cantidadColumnas = rsmd.getColumnCount();
 
+            modelo.addColumn("ID");
             modelo.addColumn("Matricula");
             modelo.addColumn("Nombre");
             modelo.addColumn("Apellidos");
@@ -131,13 +132,14 @@ public class Alumnos extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(lbl_regresarAlumno)
-                .addGap(178, 178, 178)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
+                        .addGap(178, 178, 178)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(293, 293, 293)
                         .addComponent(jLabel4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addComponent(lbl_salir)
                 .addGap(22, 22, 22))
         );
@@ -238,41 +240,46 @@ public class Alumnos extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_buscarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_buscarAlumno)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                .addComponent(lbl_agregarAlumno)
-                .addGap(28, 28, 28)
-                .addComponent(lbl_editarAlumno)
-                .addGap(25, 25, 25)
-                .addComponent(lbl_eliminarAlumno)
-                .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_buscarAlumno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_buscarAlumno)
+                        .addGap(35, 35, 35)
+                        .addComponent(lbl_agregarAlumno)
+                        .addGap(28, 28, 28)
+                        .addComponent(lbl_editarAlumno)
+                        .addGap(25, 25, 25)
+                        .addComponent(lbl_eliminarAlumno)
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_buscarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8)
-                        .addComponent(btn_buscarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lbl_agregarAlumno)
-                        .addComponent(lbl_editarAlumno)
-                        .addComponent(lbl_eliminarAlumno)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_agregarAlumno)
+                            .addComponent(lbl_editarAlumno)
+                            .addComponent(lbl_eliminarAlumno)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_buscarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)
+                            .addComponent(btn_buscarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
         );
 
@@ -323,7 +330,7 @@ public class Alumnos extends javax.swing.JFrame {
                 Conectar conexion = new Conectar();
                 Connection con = conexion.conectar();
 
-                String sql = "SELECT correo, nombre, apellidos, sexo, telefono, codigo FROM alumno " + where;
+                String sql = "SELECT id_a, correo, nombre, apellidos, sexo, telefono, codigo FROM alumno " + where;
 
                 System.out.println(sql);
                 ps = con.prepareStatement(sql);
@@ -333,6 +340,7 @@ public class Alumnos extends javax.swing.JFrame {
                 ResultSetMetaData rsmd = rs.getMetaData();
                 int cantidadColumnas = rsmd.getColumnCount();
 
+                modelo.addColumn("ID");
                 modelo.addColumn("Matricula");
                 modelo.addColumn("Nombre");
                 modelo.addColumn("Apellidos");
@@ -371,6 +379,7 @@ public class Alumnos extends javax.swing.JFrame {
                 ResultSetMetaData rsmd = rs.getMetaData();
                 int cantidadColumnas = rsmd.getColumnCount();
 
+                modelo.addColumn("ID");
                 modelo.addColumn("Matricula");
                 modelo.addColumn("Nombre");
                 modelo.addColumn("Apellidos");
@@ -400,7 +409,7 @@ public class Alumnos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Seleccione el registro a editar");
         } else {
             int row = table_alumnos.getSelectedRow();
-            String cell = table_alumnos.getModel().getValueAt(row, 0).toString();
+            String cell = table_alumnos.getModel().getValueAt(row, 1).toString();
             //castear de string a int para sacar la matricula
             int matricula = Integer.parseInt(cell);
             //sentencia para que crguen los datos al formulario
@@ -415,12 +424,14 @@ public class Alumnos extends javax.swing.JFrame {
                 this.dispose();
                 //CARGAR LA INFORMACIÓN A EDITAR
                 try {
-                    pst = con.prepareStatement("SELECT correo, nombre, apellidos, telefono, codigo FROM alumno WHERE correo=?");
+                    pst = con.prepareStatement("SELECT id_a, correo, nombre, apellidos, telefono, codigo FROM alumno WHERE correo=?");
 
                     pst.setString(1, cell);
                     rs = pst.executeQuery();
 
                     while (rs.next()) {
+                        EditarAlumno.txt_idAlumno.setText(rs.getString("id_a"));
+                        EditarAlumno.txt_idAlumno.setVisible(false);
                         EditarAlumno.txt_correoA.setText(rs.getString("correo"));
                         EditarAlumno.txt_nombreA.setText(rs.getString("nombre"));
                         EditarAlumno.txt_apellidosA.setText(rs.getString("apellidos"));
@@ -442,7 +453,7 @@ public class Alumnos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Seleccione el registro a eliminar");
         } else {
             int row = table_alumnos.getSelectedRow();
-            String cell = table_alumnos.getModel().getValueAt(row, 0).toString();
+            String cell = table_alumnos.getModel().getValueAt(row, 1).toString();
             String sql = "DELETE FROM alumno WHERE correo=" + cell;
             int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar el registro?");
 
@@ -470,6 +481,7 @@ public class Alumnos extends javax.swing.JFrame {
                         ResultSetMetaData rsmd = rs.getMetaData();
                         int cantidadColumnas = rsmd.getColumnCount();
 
+                        modelo.addColumn("ID");
                         modelo.addColumn("Matricula");
                         modelo.addColumn("Nombre");
                         modelo.addColumn("Apellidos");

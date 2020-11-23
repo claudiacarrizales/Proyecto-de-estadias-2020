@@ -303,7 +303,7 @@ public class MarcarAsistencia extends javax.swing.JFrame implements Runnable {
 
                     if (comparar.equals(campo)) {
                         aviso = true;
-                        int i = metodos.asistenciaAlumno(txt_asistenciaAlumno.getText(), lbl_fechaAlumno.getText(), lbl_horaAlumno.getText());
+                        int i = metodos.asistenciaAlumno(rs.getString("id_a"), txt_asistenciaAlumno.getText(), lbl_fechaAlumno.getText(), lbl_horaAlumno.getText());
 
                         HistorialAsistencia ventana = new HistorialAsistencia();
                         //para que aparezca la nueva venta y se oculte esta

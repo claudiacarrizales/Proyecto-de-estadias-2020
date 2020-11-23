@@ -45,8 +45,8 @@
 				<text><![CDATA[UNIVERSIDAD POLITÉCNICA DE VICTORIA]]></text>
 			</staticText>
 			<image>
-				<reportElement x="2" y="3" width="169" height="79" uuid="dc2a1339-7244-403d-a799-3f03067b0323"/>
-				<imageExpression><![CDATA["C:\\Users\\52834\\Documents\\logoUPVV.png"]]></imageExpression>
+				<reportElement x="0" y="1" width="154" height="89" uuid="0e100352-3b40-4501-8b17-c60e4f96d423"/>
+				<imageExpression><![CDATA["C:\\Users\\52834\\Documents\\NetBeansProjects\\sistemaRedes\\src\\Imagenes\\logoup.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

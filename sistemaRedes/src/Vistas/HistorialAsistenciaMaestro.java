@@ -361,7 +361,8 @@ public class HistorialAsistenciaMaestro extends javax.swing.JFrame {
             JasperReport reporte = null;
             //cariable donde se encuentra el archivo de reporte
             String path = "reporteMaestro\\reportAsistenciaMaestro.jasper";
-
+            //String path = "src\\reporteMaestro\\reportAsistenciaMaestro.jasper";
+            
             //iguala la variable reporte y enciamos el path para que cargue el reporte
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
             //hacer el llenado del reporte y se encia la ruta del reporte

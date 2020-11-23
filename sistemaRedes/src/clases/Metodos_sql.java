@@ -54,11 +54,11 @@ public class Metodos_sql {
         return resultado;
     }
     //metodo para actualizar estudiantes
-    public int actualizar(String correo, String nombre, String apellidos, String telefono, String codigo) {
+    public int actualizar(String id_a, String correo, String nombre, String apellidos, String telefono, String codigo) {
         int resultado = 0;
         Connection conexion = null;
         //sentencias sql
-        String sentencia_guardar = ("UPDATE alumno SET correo=?, nombre=?, apellidos=?, telefono=?, codigo=? WHERE correo=?");
+        String sentencia_guardar = ("UPDATE alumno SET correo=?, nombre=?, apellidos=?, telefono=?, codigo=? WHERE id_a=?");
 
         try {
             conexion = Conectar.conectar();
@@ -69,7 +69,7 @@ public class Metodos_sql {
             sentencia_preparada.setString(3, apellidos);
             sentencia_preparada.setString(4, telefono);
             sentencia_preparada.setString(5, codigo);
-            sentencia_preparada.setString(6, correo);
+            sentencia_preparada.setString(6, id_a);
 
             resultado = sentencia_preparada.executeUpdate();
             sentencia_preparada.close();
@@ -110,11 +110,11 @@ public class Metodos_sql {
     }
 
     //metodo actualizar maestros
-    public int actualizarMaestro(String correo, String nombre, String apellidos, String telefono, String huella) {
+    public int actualizarMaestro(String id_m, String correo, String nombre, String apellidos, String telefono, String huella) {
         int resultado = 0;
         Connection conexion = null;
         //sentencias sql
-        String sentencia_guardar = ("UPDATE maestro SET correo=?, nombre=?, apellidos=?, telefono=?, huella=? WHERE correo=?");
+        String sentencia_guardar = ("UPDATE maestro SET correo=?, nombre=?, apellidos=?, telefono=?, huella=? WHERE id_m=?");
 
         try {
             conexion = Conectar.conectar();
@@ -126,7 +126,7 @@ public class Metodos_sql {
             sentencia_preparada.setString(3, apellidos);
             sentencia_preparada.setString(4, telefono);
             sentencia_preparada.setString(5, huella);
-            sentencia_preparada.setString(6, correo);
+            sentencia_preparada.setString(6, id_m);
 
             resultado = sentencia_preparada.executeUpdate();
             sentencia_preparada.close();
@@ -138,7 +138,7 @@ public class Metodos_sql {
         return resultado;
     }
     //metodo para marcar asistencia alumnos
-    public int asistenciaAlumno(String id_alumno, String fecha, String hora_entrada) {
+    public int asistenciaAlumno(String id_a, String id_alumno, String fecha, String hora_entrada) {
         int resultado = 0;
         Connection conexion = null;
         boolean banderaSalida = false;
@@ -188,7 +188,7 @@ public class Metodos_sql {
         }
 
         //sentencias sql
-        String sentencia_guardar = ("INSERT INTO asistencia(id_alumno, fecha, hora_entrada) VALUES (?,?,?)");
+        String sentencia_guardar = ("INSERT INTO asistencia(id_alumno, fecha, hora_entrada, fk_alumno) VALUES (?,?,?,?)");
         if (banderaSalida == false) {
             try {
                 conexion = Conectar.conectar();
@@ -198,7 +198,8 @@ public class Metodos_sql {
                 sentencia_preparada.setString(1, id_alumno);
                 sentencia_preparada.setString(2, fecha);
                 sentencia_preparada.setString(3, hora_entrada);
-
+                sentencia_preparada.setString(4, id_a);
+                
                 resultado = sentencia_preparada.executeUpdate();
                 sentencia_preparada.close();
 

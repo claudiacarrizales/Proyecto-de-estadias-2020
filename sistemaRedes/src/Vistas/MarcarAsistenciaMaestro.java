@@ -275,6 +275,7 @@ public class MarcarAsistenciaMaestro extends javax.swing.JFrame implements Runna
             //variable para avisar si esta registrado
             boolean aviso = false;
             try {
+                //aqui quite el * por los campos*****************************
                 String sql = "SELECT * FROM maestro " + where;
                 System.out.println(sql);
                 pst = con.prepareStatement(sql);

@@ -52,6 +52,7 @@ public class Maestros extends javax.swing.JFrame {
             ResultSetMetaData rsmd = rs.getMetaData();
             int cantidadColumnas = rsmd.getColumnCount();
 
+            modelo.addColumn("ID");
             modelo.addColumn("Correo");
             modelo.addColumn("Nombre");
             modelo.addColumn("Apellidos");
@@ -186,11 +187,11 @@ public class Maestros extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(282, 282, 282)
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 307, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel13)
-                        .addGap(122, 122, 122)))
+                        .addGap(155, 155, 155)))
                 .addComponent(lbl_salir)
                 .addGap(34, 34, 34))
         );
@@ -269,8 +270,8 @@ public class Maestros extends javax.swing.JFrame {
                             .addComponent(lbl_editarMaestro)
                             .addComponent(lbl_eliminarMaestro)
                             .addComponent(lbl_agregarMaestro))))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -324,7 +325,7 @@ public class Maestros extends javax.swing.JFrame {
                 Conectar conexion = new Conectar();
                 Connection con = conexion.conectar();
 
-                String sql = "SELECT correo, nombre, apellidos, sexo, telefono, huella FROM maestro " + where;
+                String sql = "SELECT id_m, correo, nombre, apellidos, sexo, telefono, huella FROM maestro " + where;
 
                 System.out.println(sql);
                 ps = con.prepareStatement(sql);
@@ -333,7 +334,8 @@ public class Maestros extends javax.swing.JFrame {
 
                 ResultSetMetaData rsmd = rs.getMetaData();
                 int cantidadColumnas = rsmd.getColumnCount();
-
+                
+                modelo.addColumn("ID");
                 modelo.addColumn("Correo");
                 modelo.addColumn("Nombre");
                 modelo.addColumn("Apellidos");
@@ -372,7 +374,8 @@ public class Maestros extends javax.swing.JFrame {
 
                 ResultSetMetaData rsmd = rs.getMetaData();
                 int cantidadColumnas = rsmd.getColumnCount();
-
+                
+                modelo.addColumn("ID");
                 modelo.addColumn("Correo");
                 modelo.addColumn("Nombre");
                 modelo.addColumn("Apellidos");
@@ -402,7 +405,7 @@ public class Maestros extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Seleccione el registro a editar");
         } else {
             int row = table_maestros.getSelectedRow();
-            String cell = table_maestros.getModel().getValueAt(row, 0).toString();
+            String cell = table_maestros.getModel().getValueAt(row, 1).toString();
             //castear de string a int para sacar la matricula
             String matricula = cell;
             //JOptionPane.showMessageDialog(this, matricula);
@@ -418,12 +421,14 @@ public class Maestros extends javax.swing.JFrame {
                 this.dispose();
                 //CARGAR LA INFORMACIÓN A EDITAR
                 try {
-                    pst = con.prepareStatement("SELECT correo, nombre, apellidos, telefono, huella FROM maestro WHERE correo=?");
+                    pst = con.prepareStatement("SELECT id_m, correo, nombre, apellidos, telefono, huella FROM maestro WHERE correo=?");
 
                     pst.setString(1, cell);
                     rs = pst.executeQuery();
 
                     while (rs.next()) {
+                        EditarMaestro.txt_idMaestro.setText(rs.getString("id_m"));
+                        EditarMaestro.txt_idMaestro.setVisible(false);
                         EditarMaestro.txt_correoMaestro.setText(rs.getString("correo"));
                         EditarMaestro.txt_nombreMaestro.setText(rs.getString("nombre"));
                         EditarMaestro.txt_apellidosMaestro.setText(rs.getString("apellidos"));
@@ -444,7 +449,7 @@ public class Maestros extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Seleccione el registro a eliminar");
         } else {
             int row = table_maestros.getSelectedRow();
-            String cell = table_maestros.getModel().getValueAt(row, 0).toString();
+            String cell = table_maestros.getModel().getValueAt(row, 1).toString();
             //JOptionPane.showMessageDialog(this, cell);
             String sql = "DELETE FROM maestro WHERE correo='" + cell + "'";
             int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar el registro?");
@@ -473,6 +478,7 @@ public class Maestros extends javax.swing.JFrame {
                         ResultSetMetaData rsmd = rs.getMetaData();
                         int cantidadColumnas = rsmd.getColumnCount();
 
+                        modelo.addColumn("ID");
                         modelo.addColumn("Correo");
                         modelo.addColumn("Nombre");
                         modelo.addColumn("Apellidos");
